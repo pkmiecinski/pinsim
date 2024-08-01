@@ -1,0 +1,208 @@
+{
+    "pinHeader": {
+        "pins": [
+            {
+                "number": 1,
+                "name": "  3V3 ",
+                "type": "power3v3"
+            },
+            {
+                "number": 2,
+                "name": "  5V  ",
+                "type": "power5v"
+            },
+            {
+                "number": 3,
+                "name": " GPIO2",
+                "type": "gpio"
+            },
+            {
+                "number": 4,
+                "name": "  5V  ",
+                "type": "power5v"
+            },
+            {
+                "number": 5,
+                "name": " GPIO3",
+                "type": "gpio"
+            },
+            {
+                "number": 6,
+                "name": "  GND ",
+                "type": "ground"
+            }
+            ,
+            {
+                "number": 7,
+                "name": " GPIO4",
+                "type": "gpio"
+            },
+            {
+                "number": 8,
+                "name": "GPIO14",
+                "type": "gpio"
+            },
+            {
+                "number": 9,
+                "name": "  GND ",
+                "type": "ground"
+            },
+            {
+                "number": 10,
+                "name": "GPIO15",
+                "type": "gpio"
+            },
+            {
+                "number": 11,
+                "name": "GPIO17",
+                "type": "gpio"
+            },
+            {
+                "number": 12,
+                "name": "GPIO18",
+                "type": "gpio"
+            },
+            {
+                "number": 13,
+                "name": "GPIO27",
+                "type": "gpio"
+            },
+            {
+                "number": 14,
+                "name": "  GND ",
+                "type": "ground"
+            },
+            {
+                "number": 15,
+                "name": "GPIO22",
+                "type": "gpio"
+            },
+            {
+                "number": 16,
+                "name": "GPIO23",
+                "type": "gpio"
+            },
+            {
+                "number": 17,
+                "name": "  3V3 ",
+                "type": "power3v3"
+            },
+            {
+                "number": 18,
+                "name": "GPIO24",
+                "type": "gpio"
+            },
+            {
+                "number": 19,
+                "name": "GPIO10",
+                "type": "gpio"
+            },
+            {
+                "number": 20,
+                "name": "  GND ",
+                "type": "ground"
+            },
+            {
+                "number": 21,
+                "name": " GPIO9",
+                "type": "gpio"
+            },
+            {
+                "number": 22,
+                "name": "GPIO25",
+                "type": "gpio"
+            },
+            {
+                "number": 23,
+                "name": "GPIO11",
+                "type": "gpio"
+            },
+            {
+                "number": 24,
+                "name": " GPIO8",
+                "type": "gpio"
+            },
+            {
+                "number": 25,
+                "name": "  GND ",
+                "type": "ground"
+            },
+            {
+                "number": 26,
+                "name": " GPIO7",
+                "type": "gpio"
+            },
+            {
+                "number": 27,
+                "name": " ID_SD",
+                "type": "id_sd"
+            },
+            {
+                "number": 28,
+                "name": " ID_SC",
+                "type": "id_sc"
+            },
+            {
+                "number": 29,
+                "name": " GPIO5",
+                "type": "gpio"
+            },
+            {
+                "number": 30,
+                "name": "  GND ",
+                "type": "ground"
+            },
+            {
+                "number": 31,
+                "name": " GPIO6",
+                "type": "gpio"
+            },
+            {
+                "number": 32,
+                "name": "GPIO12",
+                "type": "gpio"
+            },
+            {
+                "number": 33,
+                "name": "GPIO13",
+                "type": "gpio"
+            },
+            {
+                "number": 34,
+                "name": "  GND ",
+                "type": "ground"
+            },
+            {
+                "number": 35,
+                "name": "GPIO19",
+                "type": "gpio"
+            },
+            {
+                "number": 36,
+                "name": "GPIO16",
+                "type": "gpio"
+            },
+            {
+                "number": 37,
+                "name": "GPIO26",
+                "type": "gpio"
+            },
+            {
+                "number": 38,
+                "name": "GPIO20",
+                "type": "gpio"
+            },
+            {
+                "number": 39,
+                "name": "  GND ",
+                "type": "ground"
+            },
+            {
+                "number": 40,
+                "name": "GPIO21",
+                "type": "gpio"
+            }
+
+        ]
+    }
+}
