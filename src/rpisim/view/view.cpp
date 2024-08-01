@@ -29,6 +29,11 @@ View::View(std::map<unsigned int, cpin>* modelPtr): rpi2x20header(modelPtr)
 
 ftxui::Element View::Process()
 {
+    headerTop.clear();
+    headerBottom.clear();
+    stateTop.clear();
+    stateBottom.clear();
+    
     for (auto &pin : *rpi2x20header)
     {
         Element headerElement = color(getColor(pin.second.getPinType()), text(pin.second.getName())) | borderHeavy;
