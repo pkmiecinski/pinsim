@@ -10,4 +10,6 @@ cmake ..
 make -j
 ~~~
 
+run
+build/pinsim
 

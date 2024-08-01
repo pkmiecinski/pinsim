@@ -33,7 +33,7 @@ ftxui::Element View::Process()
     headerBottom.clear();
     stateTop.clear();
     stateBottom.clear();
-    
+
     for (auto &pin : *rpi2x20header)
     {
         Element headerElement = color(getColor(pin.second.getPinType()), text(pin.second.getName())) | borderHeavy;

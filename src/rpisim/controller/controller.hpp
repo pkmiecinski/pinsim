@@ -20,12 +20,9 @@ public:
     Controller();
     void Run();
     void SetPin(unsigned int pinNumber, bool state);
-    void Tick();
 
  private:
     Model *model;
     View *view;  
-    // ftxui::Component component_renderer;
-    //ftxui::ScreenInteractive *screen;
 
 };
