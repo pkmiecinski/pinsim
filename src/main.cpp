@@ -4,7 +4,13 @@
 
 
 RpiSim *rpisim;
-std::atomic<int> timeToSleep(500000);
+
+constexpr int outputPinNumber = 3;  
+constexpr int inputPinNumber = 5;
+constexpr int timeToSleepLong = 500000;
+constexpr int timeToSleepShort = 250000;
+
+std::atomic<int> timeToSleep(timeToSleepLong);
 std::atomic<bool> continueWork(true);
 
 void ledset_thread_function()
@@ -12,7 +18,7 @@ void ledset_thread_function()
     bool buttonState = false;
     while(continueWork)
     {
-        rpisim->setPinState(3, (buttonState =!buttonState) ? true : false);
+        rpisim->setPinState(outputPinNumber, (buttonState =!buttonState) ? true : false);
         usleep(timeToSleep);
     }
 }
@@ -21,23 +27,22 @@ void button_thread_function()
 {
     while(continueWork)
     {
-        if(rpisim->getPinState(5))
+        if(rpisim->getPinState(inputPinNumber))
         {
-            timeToSleep = 250000;
+            timeToSleep = timeToSleepShort;
         }
         else
         {
-            timeToSleep = 500000;
+            timeToSleep = timeToSleepLong;
         }
     }
 }
 
 int main(void) 
 {
-    //! rpi header simulator
     rpisim = new RpiSim();
-    rpisim->setPinToOutput(3);
-    rpisim->setPinToInput(5);
+    rpisim->setPinToOutput(outputPinNumber);
+    rpisim->setPinToInput(inputPinNumber);
 
     std::thread ledSetThread(&ledset_thread_function);
     std::thread buttonThread(&button_thread_function);
