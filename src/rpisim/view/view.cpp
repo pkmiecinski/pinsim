@@ -2,23 +2,23 @@
 
 ftxui::Color getColor(PinType type)
 {
-  switch (type)
-  {
-    case PinType::gpio:
-      return Color::Green1;
-    case PinType::ground:
-      return Color::GrayDark;
-    case PinType::power5v:
-      return Color::Red;
-    case PinType::power3v3:
-      return Color::Orange1;
-    case PinType::id_sd:
-      return Color::Yellow1;
-    case PinType::id_sc:
-      return Color::Yellow1;
-    default:
-      return Color::White;
-  }
+    switch (type)
+    {
+        case PinType::gpio:
+            return Color::Green1;
+        case PinType::ground:
+            return Color::GrayDark;
+        case PinType::power5v:
+            return Color::Red;
+        case PinType::power3v3:
+            return Color::Orange1;
+        case PinType::id_sd:
+            return Color::Yellow1;
+        case PinType::id_sc:
+            return Color::Yellow1;
+        default:
+            return Color::White;
+    }
 }
 
 

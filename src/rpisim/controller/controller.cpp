@@ -4,8 +4,8 @@
 
 Controller::Controller()
 {
-    model = new Model("../config/rpi_pinout.json");
-    view  = new View( model->getModel());
+    model = std::unique_ptr<Model>(new Model("../config/rpi_pinout.json"));
+    view  = std::unique_ptr<View>(new View( model->getModel()));
 }
 
 void Controller::Run()

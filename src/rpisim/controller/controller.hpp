@@ -6,13 +6,10 @@
 #include <ftxui/screen/string.hpp>
 #include "ftxui/screen/color.hpp" 
 
-#include "ftxui/component/component.hpp"  // for Renderer, CatchEvent, Horizontal, Menu, Tab
-#include "ftxui/component/component_base.hpp"      // for ComponentBase
-#include "ftxui/component/event.hpp"               // for Event
-#include "ftxui/component/mouse.hpp"               // for Mouse
-#include "ftxui/component/screen_interactive.hpp"  // for ScreenInteractive
-#include "ftxui/dom/canvas.hpp"                    // for Canvas
-#include "ftxui/screen/color.hpp"  // for Color, Color::Red, Color::Blue, Color::Green, ftxui
+#include "ftxui/component/component.hpp"
+#include "ftxui/component/component_base.hpp"
+#include "ftxui/component/event.hpp"
+#include "ftxui/component/screen_interactive.hpp"
 
 class Controller 
 {
@@ -25,7 +22,7 @@ public:
     void SetPinOutput(unsigned int pinNumber);
 
  private:
-    Model *model;
-    View *view;  
+    std::unique_ptr<Model> model;
+    std::unique_ptr<View>  view;  
 
 };
