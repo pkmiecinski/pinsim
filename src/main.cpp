@@ -2,7 +2,6 @@
 #include <thread>
 #include <unistd.h>
 
-
 RpiSim *rpisim;
 
 constexpr int outputPinNumber = 3;  
@@ -35,6 +34,7 @@ void button_thread_function()
         {
             timeToSleep = timeToSleepLong;
         }
+        usleep(10);
     }
 }
 
