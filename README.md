@@ -34,3 +34,9 @@ All dependencies are resolved by cmake fetch contnent.
 * for exit app press 'e'
 * hint: expand your terminal horizontally since app uses 160 columns
 
+
+## Tested on:
+
+* compilers: clang-1500.3.9.4, gcc-9.4.0 
+* OS: MacOS Sonoma, Ubuntu 20.04.3 LTS
+* architecture: aarch64
