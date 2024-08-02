@@ -5,11 +5,12 @@
 
 RpiSim *rpisim;
 std::atomic<int> timeToSleep(500000);
+std::atomic<bool> continueWork(true);
 
 void ledset_thread_function()
 {
     bool buttonState = false;
-    while(1)
+    while(continueWork)
     {
         rpisim->setPinState(3, (buttonState =!buttonState) ? true : false);
         usleep(timeToSleep);
@@ -18,7 +19,7 @@ void ledset_thread_function()
 
 void button_thread_function()
 {
-    while(1)
+    while(continueWork)
     {
         if(rpisim->getPinState(5))
         {
@@ -42,8 +43,10 @@ int main(void)
     std::thread buttonThread(&button_thread_function);
 
     rpisim->run();
+    continueWork = false;
 
     ledSetThread.join();
+    buttonThread.join();
  
     return EXIT_SUCCESS;
 }

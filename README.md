@@ -31,5 +31,6 @@ All dependencies are resolved by cmake fetch contnent.
  
 * for setting pin high press 'q'
 * for setting pin low press 'w'
+* for exit app press 'e'
 * hint: expand your terminal horizontally since app uses 160 columns
 

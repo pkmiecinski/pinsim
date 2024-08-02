@@ -10,6 +10,8 @@ Controller::Controller()
 
 void Controller::Run()
 {   
+    auto screen = ScreenInteractive::FitComponent();
+    std::atomic<bool> refresh_ui_continue = true;
 #ifdef COMPILE_WITH_CONTROLLER_KEY_SUPPORT    
     auto catchKeyboard = CatchEvent([&](Event event) 
     {
@@ -23,6 +25,12 @@ void Controller::Run()
             model->getModel()->at(5).setState(false);
             return true;
         }
+        if (event == Event::Character('e'))
+        {
+            screen.Exit();
+            refresh_ui_continue = false;
+            return true;
+        }
         return false;
     });
 #endif
@@ -30,8 +38,8 @@ void Controller::Run()
 #ifdef COMPILE_WITH_CONTROLLER_KEY_SUPPORT        
     component_renderer |= catchKeyboard;
 #endif
-    auto screen = ScreenInteractive::FitComponent();
-    std::atomic<bool> refresh_ui_continue = true;
+
+
     std::thread refresh_ui ( [&] {
         while ( refresh_ui_continue ) {
             using namespace std::chrono_literals;
@@ -41,6 +49,7 @@ void Controller::Run()
     } );
 
     screen.Loop(component_renderer);
+    refresh_ui.join();
 }
 
 void Controller::SetPinState(unsigned int pinNumber, bool state)

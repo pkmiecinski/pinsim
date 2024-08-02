@@ -2,8 +2,16 @@
 
 Model::Model(const std::string configFile) : jsonConfigFile(configFile) 
 {
-    std::ifstream f("../config/rpi_pinout.json");
-    data = json::parse(f);
+    try
+    {
+        std::ifstream f("../config/rpi_pinout.json");
+        data = json::parse(f);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "Can't open/parse config file" << e.what() << '\n';
+    }
+    
 
     rpi2x20header = new std::map<unsigned int, cpin>();
     for (auto &pin : data["pinHeader"]["pins"])
