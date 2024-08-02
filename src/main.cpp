@@ -1,36 +1,49 @@
-#include "rpisim/controller/controller.hpp"
+#include "rpisim/app/rpisim.hpp"
 #include <thread>
 #include <unistd.h>
 
-Controller *controller;
 
-void thread_function()
+RpiSim *rpisim;
+std::atomic<int> timeToSleep(500000);
+
+void ledset_thread_function()
 {
+    bool buttonState = false;
     while(1)
     {
-        controller->SetPin(3, true);
-        controller->SetPin(5, true);
-        controller->SetPin(7, true);
-
-        sleep(1);
-
-        controller->SetPin(3, false);
-        controller->SetPin(5, false);
-        controller->SetPin(7, false);
-
-        sleep(1);
+        rpisim->setPinState(3, (buttonState =!buttonState) ? true : false);
+        usleep(timeToSleep);
     }
 }
 
-
-
+void button_thread_function()
+{
+    while(1)
+    {
+        if(rpisim->getPinState(5))
+        {
+            timeToSleep = 250000;
+        }
+        else
+        {
+            timeToSleep = 500000;
+        }
+    }
+}
 
 int main(void) 
-{ 
-    controller = new Controller();
-    std::thread t(&thread_function);
-    controller->Run();
-    t.join();
+{
+    //! rpi header simulator
+    rpisim = new RpiSim();
+    rpisim->setPinToOutput(3);
+    rpisim->setPinToInput(5);
+
+    std::thread ledSetThread(&ledset_thread_function);
+    std::thread buttonThread(&button_thread_function);
+
+    rpisim->run();
+
+    ledSetThread.join();
  
     return EXIT_SUCCESS;
 }

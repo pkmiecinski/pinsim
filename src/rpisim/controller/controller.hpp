@@ -19,7 +19,10 @@ class Controller
 public:
     Controller();
     void Run();
-    void SetPin(unsigned int pinNumber, bool state);
+    void SetPinState(unsigned int pinNumber, bool state);
+    bool GetPinState(unsigned int pinNumber);
+    void SetPinInput(unsigned int pinNumber);
+    void SetPinOutput(unsigned int pinNumber);
 
  private:
     Model *model;

@@ -66,3 +66,13 @@ void cpin::setState(bool state)
 {
     this->state = state;
 }
+
+void cpin::setToInput()
+{
+    this->isInput = true;
+}
+
+void cpin::setToOutput()
+{
+    this->isInput = false;
+}

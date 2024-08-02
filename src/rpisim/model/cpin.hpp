@@ -46,6 +46,8 @@ class cpin
     std::string getType();
 
     bool getIsInput();
+    void setToInput();
+    void setToOutput();
     bool getAlternateFunction();
     bool getState();
     void setState(bool state);

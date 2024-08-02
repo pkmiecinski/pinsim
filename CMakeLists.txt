@@ -31,6 +31,7 @@ ${CMAKE_SOURCE_DIR}/src/rpisim/model/cpin.cpp
 ${CMAKE_SOURCE_DIR}/src/rpisim/model/model.cpp
 ${CMAKE_SOURCE_DIR}/src/rpisim/view/view.cpp
 ${CMAKE_SOURCE_DIR}/src/rpisim/controller/controller.cpp
+${CMAKE_SOURCE_DIR}/src/rpisim/app/rpisim.cpp
 )
 
 SET (RPISIM_HEADERS
@@ -38,6 +39,7 @@ ${CMAKE_SOURCE_DIR}/src/rpisim/model/cpin.hpp
 ${CMAKE_SOURCE_DIR}/src/rpisim/model/model.hpp
 ${CMAKE_SOURCE_DIR}/src/rpisim/view/view.hpp
 ${CMAKE_SOURCE_DIR}/src/rpisim/controller/controller.hpp
+${CMAKE_SOURCE_DIR}/src/rpisim/app/rpisim.hpp
 )
 
 
